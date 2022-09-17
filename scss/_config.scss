@@ -1,0 +1,28 @@
+$primary-color: #fff;
+$secondary-color: darken($primary-color, 5%);
+$accent-color: #9c0044;
+$text-color: #000;
+$font-weights: (
+    "regular": 400,
+    "bold": 700
+);
+
+@mixin main-margin {
+    margin-left: 15vw;
+    margin-right: 15vw;
+    text-align: justify;
+}
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin transition-ease {
+    transition: all 0.1s ease-in-out;
+}
