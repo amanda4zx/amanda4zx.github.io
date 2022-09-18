@@ -57,13 +57,17 @@ nav .menu-nav__link {
   font-size: 1.2rem;
 }
 
+.menu-btn {
+  visibility: hidden;
+}
+
 .home {
   overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin-top: 15rem;
+  margin-top: 12rem;
   margin-left: 15vw;
   margin-right: 15vw;
   text-align: justify;
@@ -85,12 +89,11 @@ nav .menu-nav__link {
 .home .bio .photo {
   -o-object-fit: scale-down;
      object-fit: scale-down;
-  margin-right: 4rem;
+  margin-right: 2rem;
 }
 
 .home .bio .about {
-  margin-left: 4rem;
-  text-align: justify;
+  margin-left: 2rem;
 }
 
 .research {
@@ -126,6 +129,135 @@ nav .menu-nav__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.cv .publication {
+  font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+  h1, h2, h3, p {
+    text-align: left;
+  }
+  .menu-btn {
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
+    right: 1rem;
+    top: 1rem;
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+  .menu-btn__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: #000;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+  .menu-btn__burger::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    width: 28px;
+    height: 3px;
+    background: #000;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+  .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    width: 28px;
+    height: 3px;
+    background: #000;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+  .menu-btn__burger.open {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    background: transparent;
+  }
+  .menu-btn__burger.open::before {
+    -webkit-transform: rotate(45deg) translate(5px, 8px);
+            transform: rotate(45deg) translate(5px, 8px);
+  }
+  .menu-btn__burger.open::after {
+    width: 28px;
+    -webkit-transform: rotate(-45deg) translate(3px, -7px);
+            transform: rotate(-45deg) translate(3px, -7px);
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    opacity: 0.98;
+    padding-left: 0;
+    visibility: hidden;
+  }
+  nav.open {
+    visibility: visible;
+  }
+  nav .menu-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    height: 100vh;
+    overflow: visible;
+    background-color: #f2f2f2;
+  }
+  nav .menu-nav .menu-nav__item {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .home {
+    margin-top: 8rem;
+  }
+  .home .icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home .bio {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home .bio .photo {
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+    margin-right: 0rem;
+  }
+  .home .bio .about {
+    margin-left: 0rem;
+    margin-top: 3rem;
+  }
 }
 
 body {
@@ -188,7 +320,7 @@ main {
 main .icons {
   position: fixed;
   bottom: 1rem;
-  left: 1rem;
+  right: 1rem;
 }
 
 main .icons a {
