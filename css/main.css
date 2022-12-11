@@ -43,7 +43,6 @@ nav .menu-nav__item {
 }
 
 nav .menu-nav__item:hover {
-  font-weight: 700;
   border-bottom: 3px solid #b3b3b3;
 }
 
@@ -138,6 +137,10 @@ nav .menu-nav__link {
 @media screen and (max-width: 768px) {
   h1, h2, h3, p {
     text-align: left;
+  }
+  .myfooter {
+    position: static;
+    text-align: center;
   }
   .menu-btn {
     visibility: visible;
@@ -338,9 +341,8 @@ footer {
   font-size: 0.8rem;
   position: fixed;
   bottom: 0;
-  right: 1rem;
-  text-align: right;
-  padding: 1rem;
+  left: 1rem;
+  text-align: left;
   padding-bottom: 0.4rem;
   color: gray;
   background-color: #fff;
